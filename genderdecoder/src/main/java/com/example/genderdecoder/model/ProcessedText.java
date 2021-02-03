@@ -53,7 +53,7 @@ public class ProcessedText implements Serializable {
 	    	
 	    }
 	    
-	 // ToDo: Define all the Getters and Setters 
+	 // ToDo: Define all the Getgit pushters and Setters 
 		public Long getId() {
 			return id;
 		}
