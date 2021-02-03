@@ -27,18 +27,22 @@ public class ProcessedText implements Serializable {
 		
 		@NotBlank
 		private String text;
-		
-	    //ToDo: Define countMasculine, countFeminine and genderMap
 	    
 	    @Column(nullable = false, updatable = false)
 	    @Temporal(TemporalType.TIMESTAMP)
 	    @CreatedDate
 	    private Date createdAt;
-
-		//ToDo: Define updatedAt
-		//Note that you should be using an annotation like @CreatedDate
-		//Search for "spring data jpa auditing annotations" to find the appropriate one for updatedAt
+	    
+	    int countMasculine;
+	    int countFeminine;
+	    String genderMap;
 	   
+	    @Column(name = "last_modified_date")
+	    @Temporal(TemporalType.TIMESTAMP)
+	    @LastModifiedDate
+	    private Date lastModifiedDate;
+	    
+	    
 	    public ProcessedText() {
 	    	
 	    }
@@ -53,7 +57,7 @@ public class ProcessedText implements Serializable {
 	    	
 	    }
 	    
-	 // ToDo: Define all the Getgit pushters and Setters 
+	 // ToDo: Define all the Getters and Setters 
 		public Long getId() {
 			return id;
 		}
